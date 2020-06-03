@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2bc40d386f514010a70d07444e269b00" Name="Diagram1">
+        <EntityTypeShape EntityType="KeyHouseModel.Equipement" Width="1.5" PointX="7.5" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="KeyHouseModel.ImageLogement" Width="1.5" PointX="7.5" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="KeyHouseModel.Logements" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="KeyHouseModel.RoleUser" Width="1.5" PointX="0.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="KeyHouseModel.Uitilsateur" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="KeyHouseModel.villes" Width="1.5" PointX="3" PointY="7.125" IsExpanded="true" />
+        <AssociationConnector Association="KeyHouseModel.FK__Equipemen__idLog__4222D4EF" ManuallyRouted="false" />
+        <AssociationConnector Association="KeyHouseModel.FK__ImageLoge__idLog__3F466844" ManuallyRouted="false" />
+        <AssociationConnector Association="KeyHouseModel.FK__Logements__IDuti__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="KeyHouseModel.FK__Logements__idvil__38996AB5" ManuallyRouted="false" />
+        <AssociationConnector Association="KeyHouseModel.FK__Uitilsate__idRol__25869641" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

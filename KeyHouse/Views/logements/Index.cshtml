@@ -1,0 +1,88 @@
+﻿@model IEnumerable<KeyHouse.Models.logements>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TitreLogement)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DescriptionLogement)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nombrePieces)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.surface)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prix)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Etat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Adresse)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Typelogement)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserKey.Nom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Villes.NomVille)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TitreLogement)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DescriptionLogement)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombrePieces)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.surface)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prix)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Etat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Adresse)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Typelogement)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserKey.Nom)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Villes.NomVille)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Idlogement }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Idlogement }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Idlogement })
+        </td>
+    </tr>
+}
+
+</table>

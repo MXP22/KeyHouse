@@ -1,0 +1,43 @@
+﻿@model KeyHouse.Models.ImageLogement
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ImageLogement</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NomImage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomImage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PathImage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PathImage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Logements.TitreLogemenet)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Logements.TitreLogemenet)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idImage }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

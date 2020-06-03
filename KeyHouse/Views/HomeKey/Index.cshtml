@@ -1,0 +1,63 @@
+﻿@model KeyHouse.Models.LogModel
+   
+@{ ViewBag.Title = "HomeKey";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h1> Recherche Logements</h1>
+
+<div>
+
+    @using (Html.BeginForm("Index", "HomeKey", FormMethod.Post))
+    {
+
+
+        @Html.AntiForgeryToken()
+
+        @Html.Label("Villes:")
+
+        @Html.TextBoxFor(model => model.Villes)
+
+        @Html.Label("Prix Min:")
+
+        @Html.TextBoxFor(model => model.Prix)
+
+        @Html.Label("Prix Max:")
+
+        @Html.TextBoxFor(model => model.Prix)
+
+
+        @Html.Label("Surface Min:")
+
+        @Html.TextBoxFor(model => model.surface)
+
+
+        @Html.Label("Surface Max:")
+
+        @Html.TextBoxFor(model => model.surface)
+
+        <input type="submit" value="Rechercher" />
+
+        <div>
+
+
+
+
+        </div>
+
+    }
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+

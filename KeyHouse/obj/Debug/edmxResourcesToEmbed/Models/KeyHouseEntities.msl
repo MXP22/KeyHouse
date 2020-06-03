@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="KeyHouseModelStoreContainer" CdmEntityContainer="KeyHouseEntities">
+    <EntitySetMapping Name="Equipement">
+      <EntityTypeMapping TypeName="KeyHouseModel.Equipement">
+        <MappingFragment StoreEntitySet="Equipement">
+          <ScalarProperty Name="IDequipement" ColumnName="IDequipement" />
+          <ScalarProperty Name="NomEquipement" ColumnName="NomEquipement" />
+          <ScalarProperty Name="idLogement" ColumnName="idLogement" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ImageLogement">
+      <EntityTypeMapping TypeName="KeyHouseModel.ImageLogement">
+        <MappingFragment StoreEntitySet="ImageLogement">
+          <ScalarProperty Name="idImage" ColumnName="idImage" />
+          <ScalarProperty Name="NomImage" ColumnName="NomImage" />
+          <ScalarProperty Name="PathImage" ColumnName="PathImage" />
+          <ScalarProperty Name="idLog" ColumnName="idLog" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Logements">
+      <EntityTypeMapping TypeName="KeyHouseModel.Logements">
+        <MappingFragment StoreEntitySet="Logements">
+          <ScalarProperty Name="idLogement" ColumnName="idLogement" />
+          <ScalarProperty Name="TitreLogemenet" ColumnName="TitreLogemenet" />
+          <ScalarProperty Name="DescriptionLogement" ColumnName="DescriptionLogement" />
+          <ScalarProperty Name="Nbrchambre" ColumnName="Nbrchambre" />
+          <ScalarProperty Name="surface" ColumnName="surface" />
+          <ScalarProperty Name="Prix" ColumnName="Prix" />
+          <ScalarProperty Name="idville" ColumnName="idville" />
+          <ScalarProperty Name="IDutilisateur" ColumnName="IDutilisateur" />
+          <ScalarProperty Name="Typelogement" ColumnName="Typelogement" />
+          <ScalarProperty Name="Adresse" ColumnName="Adresse" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RoleUser">
+      <EntityTypeMapping TypeName="KeyHouseModel.RoleUser">
+        <MappingFragment StoreEntitySet="RoleUser">
+          <ScalarProperty Name="idRole" ColumnName="idRole" />
+          <ScalarProperty Name="RoleNom" ColumnName="RoleNom" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Uitilsateur">
+      <EntityTypeMapping TypeName="KeyHouseModel.Uitilsateur">
+        <MappingFragment StoreEntitySet="Uitilsateur">
+          <ScalarProperty Name="idUtilisateur" ColumnName="idUtilisateur" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="Prenom" ColumnName="Prenom" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="ConEmail" ColumnName="ConEmail" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="Adresse" ColumnName="Adresse" />
+          <ScalarProperty Name="CodePostal" ColumnName="CodePostal" />
+          <ScalarProperty Name="Ville" ColumnName="Ville" />
+          <ScalarProperty Name="Pays" ColumnName="Pays" />
+          <ScalarProperty Name="idRole" ColumnName="idRole" />
+          <ScalarProperty Name="Motdepasse" ColumnName="Motdepasse" />
+          <ScalarProperty Name="civilite" ColumnName="civilite" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="villes">
+      <EntityTypeMapping TypeName="KeyHouseModel.villes">
+        <MappingFragment StoreEntitySet="villes">
+          <ScalarProperty Name="IDville" ColumnName="IDville" />
+          <ScalarProperty Name="NomVille" ColumnName="NomVille" />
+          <ScalarProperty Name="CodePostal" ColumnName="CodePostal" />
+          <ScalarProperty Name="Departement" ColumnName="Departement" />
+          <ScalarProperty Name="latitude" ColumnName="latitude" />
+          <ScalarProperty Name="longitude" ColumnName="longitude" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

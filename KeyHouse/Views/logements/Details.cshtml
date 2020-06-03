@@ -1,0 +1,99 @@
+﻿@model KeyHouse.Models.logements
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>logements</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TitreLogement)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TitreLogement)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DescriptionLogement)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DescriptionLogement)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nombrePieces)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombrePieces)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.surface)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.surface)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Prix)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Prix)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Etat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Etat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Adresse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Adresse)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Typelogement)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Typelogement)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserKey.Nom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserKey.Nom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Villes.NomVille)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Villes.NomVille)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Idlogement }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

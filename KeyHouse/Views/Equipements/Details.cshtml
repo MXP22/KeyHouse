@@ -1,0 +1,35 @@
+﻿@model KeyHouse.Models.Equipement
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Equipement</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NomEquipement)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomEquipement)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Logements.TitreLogemenet)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Logements.TitreLogemenet)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IDequipement }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

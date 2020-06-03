@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="KeyHouseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Equipement">
+    <Key>
+      <PropertyRef Name="IDequipement" />
+    </Key>
+    <Property Name="IDequipement" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NomEquipement" Type="varchar" MaxLength="50" />
+    <Property Name="idLogement" Type="int" />
+  </EntityType>
+  <EntityType Name="ImageLogement">
+    <Key>
+      <PropertyRef Name="idImage" />
+    </Key>
+    <Property Name="idImage" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NomImage" Type="varchar" MaxLength="50" />
+    <Property Name="PathImage" Type="varchar" MaxLength="500" />
+    <Property Name="idLog" Type="int" />
+  </EntityType>
+  <EntityType Name="Logements">
+    <Key>
+      <PropertyRef Name="idLogement" />
+    </Key>
+    <Property Name="idLogement" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TitreLogemenet" Type="varchar" MaxLength="50" />
+    <Property Name="DescriptionLogement" Type="varchar" MaxLength="50" />
+    <Property Name="Nbrchambre" Type="int" />
+    <Property Name="surface" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Prix" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="idville" Type="int" />
+    <Property Name="IDutilisateur" Type="int" />
+    <Property Name="Typelogement" Type="varchar" MaxLength="50" />
+    <Property Name="Adresse" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="RoleUser">
+    <Key>
+      <PropertyRef Name="idRole" />
+    </Key>
+    <Property Name="idRole" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleNom" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Uitilsateur">
+    <Key>
+      <PropertyRef Name="idUtilisateur" />
+    </Key>
+    <Property Name="idUtilisateur" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nom" Type="varchar" MaxLength="40" />
+    <Property Name="Prenom" Type="varchar" MaxLength="40" />
+    <Property Name="Email" Type="varchar" MaxLength="150" />
+    <Property Name="ConEmail" Type="bit" />
+    <Property Name="Telephone" Type="varchar" MaxLength="50" />
+    <Property Name="Adresse" Type="varchar" MaxLength="250" />
+    <Property Name="CodePostal" Type="varchar" MaxLength="25" />
+    <Property Name="Ville" Type="varchar" MaxLength="50" />
+    <Property Name="Pays" Type="varchar" MaxLength="50" />
+    <Property Name="idRole" Type="int" />
+    <Property Name="Motdepasse" Type="varchar" MaxLength="50" />
+    <Property Name="civilite" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="villes">
+    <Key>
+      <PropertyRef Name="IDville" />
+    </Key>
+    <Property Name="IDville" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NomVille" Type="varchar" MaxLength="50" />
+    <Property Name="CodePostal" Type="varchar" MaxLength="50" />
+    <Property Name="Departement" Type="varchar" MaxLength="50" />
+    <Property Name="latitude" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="longitude" Type="decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <Association Name="FK__Equipemen__idLog__4222D4EF">
+    <End Role="Logements" Type="Self.Logements" Multiplicity="0..1" />
+    <End Role="Equipement" Type="Self.Equipement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Logements">
+        <PropertyRef Name="idLogement" />
+      </Principal>
+      <Dependent Role="Equipement">
+        <PropertyRef Name="idLogement" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ImageLoge__idLog__3F466844">
+    <End Role="Logements" Type="Self.Logements" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ImageLogement" Type="Self.ImageLogement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Logements">
+        <PropertyRef Name="idLogement" />
+      </Principal>
+      <Dependent Role="ImageLogement">
+        <PropertyRef Name="idLog" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Logements__IDuti__398D8EEE">
+    <End Role="Uitilsateur" Type="Self.Uitilsateur" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Logements" Type="Self.Logements" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Uitilsateur">
+        <PropertyRef Name="idUtilisateur" />
+      </Principal>
+      <Dependent Role="Logements">
+        <PropertyRef Name="IDutilisateur" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Logements__idvil__38996AB5">
+    <End Role="villes" Type="Self.villes" Multiplicity="0..1" />
+    <End Role="Logements" Type="Self.Logements" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="villes">
+        <PropertyRef Name="IDville" />
+      </Principal>
+      <Dependent Role="Logements">
+        <PropertyRef Name="idville" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Uitilsate__idRol__25869641">
+    <End Role="RoleUser" Type="Self.RoleUser" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Uitilsateur" Type="Self.Uitilsateur" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RoleUser">
+        <PropertyRef Name="idRole" />
+      </Principal>
+      <Dependent Role="Uitilsateur">
+        <PropertyRef Name="idRole" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="KeyHouseModelStoreContainer">
+    <EntitySet Name="Equipement" EntityType="Self.Equipement" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ImageLogement" EntityType="Self.ImageLogement" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Logements" EntityType="Self.Logements" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RoleUser" EntityType="Self.RoleUser" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Uitilsateur" EntityType="Self.Uitilsateur" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="villes" EntityType="Self.villes" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Equipemen__idLog__4222D4EF" Association="Self.FK__Equipemen__idLog__4222D4EF">
+      <End Role="Logements" EntitySet="Logements" />
+      <End Role="Equipement" EntitySet="Equipement" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ImageLoge__idLog__3F466844" Association="Self.FK__ImageLoge__idLog__3F466844">
+      <End Role="Logements" EntitySet="Logements" />
+      <End Role="ImageLogement" EntitySet="ImageLogement" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Logements__IDuti__398D8EEE" Association="Self.FK__Logements__IDuti__398D8EEE">
+      <End Role="Uitilsateur" EntitySet="Uitilsateur" />
+      <End Role="Logements" EntitySet="Logements" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Logements__idvil__38996AB5" Association="Self.FK__Logements__idvil__38996AB5">
+      <End Role="villes" EntitySet="villes" />
+      <End Role="Logements" EntitySet="Logements" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Uitilsate__idRol__25869641" Association="Self.FK__Uitilsate__idRol__25869641">
+      <End Role="RoleUser" EntitySet="RoleUser" />
+      <End Role="Uitilsateur" EntitySet="Uitilsateur" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

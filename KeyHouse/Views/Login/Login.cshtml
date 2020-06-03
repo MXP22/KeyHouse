@@ -1,0 +1,53 @@
+﻿@model KeyHouse.Models.Login
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Login</h2>
+
+<div>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Loginapp, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.TextBoxFor(model => model.Loginapp, new { @class = "text-danger" })
+
+        </div>
+
+        <div class="form-group">
+
+            @Html.LabelFor(model => model.Motdepasse, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.PasswordFor(model => model.Motdepasse, new { @class = "text-danger" })
+
+
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Remomber, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.CheckBoxFor(model => model.Remomber, new { @class = "text-danger" })
+
+
+        </div>
+
+
+        <div>
+
+
+            <input type="submit" value="Login" class="btn btn-default" />
+        </div>
+
+    }
+
+
+
+
+
+
+</div>
+
+
+
